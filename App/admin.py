@@ -10,3 +10,7 @@ admin.site.register(Ana)
 admin.site.register(Esteban)
 
 admin.site.register(Empresa)
+
+admin.site.register(Contacto)
+
+admin.site.register(Avatar)

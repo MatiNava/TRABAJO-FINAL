@@ -7,22 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    {% if miformulario.errors %}
-        <p> estan mal los datos</p>
-        {% endif %}
-
-        <form action="" method="POST">{% csrf_token %}
-
+    <div>
+        <h1>Editar Perfil</h1>
+        <h2> de {{usuario}}</h2>
+    </div>
+    <div>
+        <form action="" method="POST"> {% csrf_token %}
+            
             <table>
-
-                {{miformulario.as_table}}
-                
+                {{miFormulario.as_table}}    
             </table>
 
-
-            <input type="submit", value="Enviar" >
-
-
+            <input type="submit", value="Enviar">
         </form>
+    </div>
 </body>
 </html>

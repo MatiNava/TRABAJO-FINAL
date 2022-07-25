@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto_list</title>
+</head>
+<body>
+
+    <h1>Clientes de la Empresa</h1>
+    <ul>
+        {% for contacto in object_list %}
+
+            <li>
+                <p>NOMBRE COMPLETO: {{ contacto.nombre_completo }} </p> 
+                <p>EMAIL: {{ contacto.email }}</p>
+                <p>TELEFONO: {{ contacto.telefono }}</p>
+                <p>MENSAJE: {{ contacto.mensaje }}</p>
+                <p> 
+                    <a href="{% url 'Detail' contacto.id %}">Ver</a> | 
+                    <a href="{% url 'Edit' contacto.id %}">Editar</a> | 
+                    <a href="{% url 'Delete' contacto.id %}">Borrar</a> 
+                
+                </p> 
+            </li>
+
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'New'  %}">Nuevo</a> | 
+
+
+</body>
+</html>
