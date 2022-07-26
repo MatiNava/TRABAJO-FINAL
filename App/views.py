@@ -13,23 +13,28 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
+def inicio(request):
+      return render(request, 'App/inicio.html') 
 
 @login_required
-def inicio(request):
-      avatares = Avatar.objects.filter(user=request.user.id)
-      return render(request,"App/inicio.html",{"url": avatares[0].imagen.url})
-
 def esteban(request):
-    return render(request, 'App/Esteban.html')
+      avatares = Avatar.objects.filter(user=request.user.id)
+      return render(request,"App/Esteban.html",{"url": avatares[0].imagen.url})
 
+@login_required
 def ana(request):
-    return render(request, 'App/Ana.html') 
+      avatares = Avatar.objects.filter(user=request.user.id)
+      return render(request,"App/Ana.html",{"url": avatares[0].imagen.url})
 
+@login_required
 def matias(request):
-    return render(request, 'App/Matias.html')
-
+      avatares = Avatar.objects.filter(user=request.user.id)
+      return render(request,"App/Matias.html",{"url": avatares[0].imagen.url})
+      
+@login_required
 def empresa(request):
-    return render(request, 'App/Empresa.html')
+      avatares = Avatar.objects.filter(user=request.user.id)
+      return render(request,"App/Empresa.html",{"url": avatares[0].imagen.url})
 
 def contacto(request):
     if request.method == 'POST':
@@ -45,12 +50,14 @@ def contacto(request):
         miformulario= Contactos() 
     return render(request, 'App/contactos.html', {'miformulario':miformulario}) 
 
+@login_required
 def leerContacto(request):
     contacto = Contacto.objects.all()
     contexto = {"contacto":contacto}
 
     return render(request,"App/leerClientes.html",contexto)
 
+@login_required
 def borrarContacto(request, contacto_nombre):
     contacto = Contacto.objects.get(nombre_completo= contacto_nombre)
     contacto.delete()
@@ -60,8 +67,9 @@ def borrarContacto(request, contacto_nombre):
     contactos = Contacto.objects.all()
     contexto = {"contactos":contactos}
 
-    return render(request,"App/inicio.html",contexto) #C:\Users\matin\OneDrive\Escritorio\proyecto_final\TRABAJO_FINAL\App\templates\App\leerClientes.html
-
+    return render(request,"App/inicio.html",contexto)
+    
+@login_required
 def editarContacto(request, contacto_nombre):
 
     #recibe el nombre del contacto que modificamos
