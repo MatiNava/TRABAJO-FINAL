@@ -7,7 +7,6 @@ Para ingresar a la pagina lo pueden hacer con el usuario:
 user: Matiasnava10
 password: Unionvecinal2231
 
-Cabe aclarar algunas cosas, me falta aun el video y poner mas "lindo" el frontend si me da el tiempo. Por ahora la funcionalidad es correcta segun el codigo del backend
-en estos dias voy estar subiendo el video y las capturas al siguiente link:
+En el siguiente link se encuentra el video de 2min requerido para aprobar, ademas de las capturas de pantalla para los distintos templates:
 
 https://drive.google.com/drive/folders/15HKhgoZCMBuTR4Gr732XNhOoFj_meDhQ?usp=sharing
