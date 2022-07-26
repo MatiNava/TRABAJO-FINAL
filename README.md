@@ -1,4 +1,4 @@
-# TRABAJO-FINAL
+# TRABAJO-FINAL (se encuentra en la rama 2)
 esta es la carpeta del trabajo final del curso
 
 mi nombre es Matias Nava y realice el trabajo final solo.
