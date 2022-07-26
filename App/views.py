@@ -14,10 +14,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 
-
+@login_required
 def inicio(request):
       avatares = Avatar.objects.filter(user=request.user.id)
-      return render(request,"App/inicio.html",{"url": avatares[0].imagen.url} ) #logo_BzVR9HA.png
+      return render(request,"App/inicio.html",{"url": avatares[0].imagen.url})
 
 def esteban(request):
     return render(request, 'App/Esteban.html')

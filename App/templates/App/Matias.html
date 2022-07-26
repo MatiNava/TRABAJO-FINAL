@@ -1,13 +1,6 @@
-{% extends 'App/inicio.html' %}
-
-{% load static %}
-
-{% block contenidoQueCambia %}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {% load static %}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -35,11 +28,15 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Matias' %}">Matias</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Esteban</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Ana</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Empresa' %}">TRABAJOS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Esteban' %}">Esteban</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Ana' %}">Ana</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Empresa' %}">Trabajos</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Formulario' %}">CONTACTO</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Login' %}">INICIAR SESION</a></li>
+                        {% if not request.user.is_authenticated %}
+                        <h3 class="text-muted small mb-4 mb-lg-0">Hola, {{user.username}} </h3>
+                        {% endif %}
+                    
                     </ul>
                 </div>
             </div>
@@ -50,7 +47,7 @@
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="{% static 'App/assets/img/avataaars.svg' %}" alt="..." /> <!-- FOTO DE PORTADA -->
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">EMPRESA ELITE</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">MH</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -61,11 +58,19 @@
                 <p class="masthead-subheading font-weight-light mb-0">ING civil - Logistica - Proyect Manager</p>
             </div>
         </header>
-
-
-
-
-
-
-
-{% endblock %}
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">Matias</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-4 ms-auto"><p class="lead">Ingeniero calculista con experiencia mas de 20 años de experiencia en el rubro de la construccion</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">Algunos de los trabajos se encuentran en la pestaña "trabajos" de la web</p></div>
+                </div>
