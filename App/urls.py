@@ -22,6 +22,7 @@ urlpatterns = [
     path('register', views.register, name='register'),
     path('logout', LogoutView.as_view(template_name='App/logout.html'), name='logout'),
     path('editarPerfil', views.editarPerfil, name='EditarPerfil'),
+    path('aboutme', views.aboutme, name='Aboutme'),
 
 
 ]

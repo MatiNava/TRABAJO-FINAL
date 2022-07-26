@@ -16,6 +16,9 @@ from django.contrib.auth.decorators import login_required
 def inicio(request):
       return render(request, 'App/inicio.html') 
 
+def aboutme(request):
+      return render(request, 'App/aboutme.html') 
+
 @login_required
 def esteban(request):
       avatares = Avatar.objects.filter(user=request.user.id)
